@@ -30,7 +30,7 @@ export default function ProductCard({ card }) {
 
   const subValue = () => {
     setValue(prev => {
-      return prev > 0 ? prev - 1 : 0;
+      return prev > 1 ? prev - 1 : 1;
     });
   };
 
