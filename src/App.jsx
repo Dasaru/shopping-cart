@@ -4,6 +4,7 @@ import About from "./pages/About";
 import Products from "./pages/Products";
 import Checkout from "./pages/Checkout";
 import ErrorPage from "./pages/ErrorPage";
+import { GlobalStateProvider } from "./GlobalStateContext";
 
 const router = createBrowserRouter([
   {
@@ -33,5 +34,9 @@ const router = createBrowserRouter([
 ]);
 
 export default function App() {
-  return <RouterProvider router={router} />;
+  return (
+    <GlobalStateProvider>
+      <RouterProvider router={router} />
+    </GlobalStateProvider>
+  );
 }

@@ -1,8 +1,8 @@
 import { useState } from 'react';
 
-export default function ProductCard({ card }) {
+export default function ProductCard({ product }) {
   const [value, setValue] = useState(1);
-  const {id, title, price, description, category, image, rating} = card;
+  const {id, title, price, description, category, image, rating} = product;
 
   const handleChange = e => {
     let input = parseInt(e.target.value);
