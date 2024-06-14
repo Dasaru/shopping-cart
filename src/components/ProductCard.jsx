@@ -38,7 +38,7 @@ export default function ProductCard({ card }) {
     <div className="product-card">
       <img src={image} alt="product image" />
       <h2>{title}</h2>
-      <textarea disabled>{description}</textarea>
+      <textarea value={description} disabled />
       <div className="product-area">
         <span className="product-price">${price.toFixed(2)}</span>
         <div className="product-quantity">
