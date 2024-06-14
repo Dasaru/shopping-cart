@@ -55,3 +55,101 @@ body {
   font-weight: bold;
   margin-bottom: 30px;
 }
+
+.product-page {
+  display: flex;
+  gap: 20px;
+}
+
+.product-card {
+  width: 250px;
+  display: flex;
+  gap: 15px;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 15px;
+  border-radius: 20px;
+  border: 3px solid rgba(0,0,0,0.3);
+}
+
+.product-card button:hover {
+  cursor: pointer;
+}
+
+.product-card img {
+  height: 200px;
+}
+
+.product-card h2 {
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.1rem;
+  line-height: 1.3rem;
+}
+
+.product-card textarea {
+  resize: none;
+  width: 100%;
+  height: 7rem;
+  border: none;
+  user-select: none;
+  font-family: inherit;
+  font-size: 0.9rem;
+  line-height: 1.1rem;
+  letter-spacing: 2px;
+  background-color: white;
+}
+
+.product-area {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.product-price {
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.product-quantity {
+  display: flex;
+  gap: 10px;
+}
+
+.product-quantity input {
+  width: 80px;
+  font-size: 1.4rem;
+  line-height: 2rem;
+  text-align: center;
+}
+
+.product-quantity button {
+  height: 40px;
+  width: 40px;
+  border: 1px solid black;
+  border-radius: 50%;
+  font-size: 2rem;
+  background-color: white;
+}
+
+.product-quantity button:hover {
+  background-color: black;
+  color: white;
+}
+
+.product-add-btn {
+  width: 150px;
+  height: 40px;
+  font-weight: bold;
+  font-size: 1.1rem;
+  border-radius: 12px;
+  border: 1px solid black;
+  background-color: white;
+}
+
+.product-add-btn:hover {
+  background-color: black;
+  color: white;
+}
