@@ -10,7 +10,7 @@ export default function Navbar() {
         <li>
           <Link to="/about">About</Link>
         </li>
-        <li className="nav__checkout">
+        <li className="nav-checkout">
           <Link to="/checkout">Checkout</Link>
         </li>
       </ul>
