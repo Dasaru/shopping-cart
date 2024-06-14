@@ -1,0 +1,57 @@
+body {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.nav {
+  background-color: black;
+  display: flex;
+  align-items: center;
+  padding: 0 3rem;
+}
+
+.nav ul {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.nav a {
+  text-decoration: none;
+  font-size: 24px;
+  font-weight: bold;
+  display: inline-block;
+  height: 3rem;
+  display: flex;
+  align-items: center;
+}
+
+.nav a:visited {
+  color: white;
+}
+
+.nav a:link {
+  color: white;
+}
+
+.nav a:hover {
+  color: rgb(165, 193, 255);
+}
+
+.active {
+  background-color: grey;
+}
+
+.nav__checkout {
+  margin-left: auto;
+}
+
+.page-container {
+  margin: 2rem 3rem;
+}
+
+.error-page h1 {
+  font-size: 2em;
+  font-weight: bold;
+  margin-bottom: 30px;
+}
