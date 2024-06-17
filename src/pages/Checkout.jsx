@@ -25,7 +25,7 @@ export default function Checkout() {
               </tr>
             </thead>
             <tbody>
-              {products.map(product => (
+              {products.map(product => ( //TODO: Change products to cart
                 <CheckoutRow key={product.id} product={product} quantity={7} /> 
               ))}
             </tbody>

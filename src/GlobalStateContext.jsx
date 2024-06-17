@@ -49,7 +49,7 @@ export function GlobalStateProvider({ children }) {
   const [cart, setCart] = useState([]);
 
   useEffect(() => {
-    //Fetch call, setGlobalState
+    //TODO: Fetch call, setGlobalState
     setProducts(apiResult);
   }, []);
 
