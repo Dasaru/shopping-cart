@@ -5,6 +5,8 @@ import { GlobalStateContext } from "../GlobalStateContext";
 export default function Navbar() {
   const { cart } = useContext(GlobalStateContext);
 
+  const cartSize = cart.reduce((totalQty, product) => totalQty + product.quantity, 0);
+
   return (
     <nav className="nav">
       <ul>
@@ -18,7 +20,7 @@ export default function Navbar() {
           <Link to="/checkout">
             <div className="cart-icon">
               <img src="/cart.png" alt="shopping cart icon" />
-              {cart.length > 0 && <span className="cart-icon-qty">{cart.length}</span>}
+              {cartSize > 0 && <span className="cart-icon-qty">{cartSize}</span>}
             </div>
             View Cart
           </Link>
