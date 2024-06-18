@@ -3,13 +3,13 @@ import { GlobalStateContext } from "../GlobalStateContext";
 import CheckoutRow from "../components/CheckoutRow";
 
 export default function Checkout() {
-  const { cart, products } = useContext(GlobalStateContext); // TODO: USE THE CART INSTEAD OF PRODUCTS
+  const { cart, products } = useContext(GlobalStateContext);
 
-  const cartSize = products.length; // TODO: Change to cart.length
+  const cartSize = cart.reduce((totalQty, product) => totalQty + product.quantity, 0);
 
   return (
     <div className="page-container checkout-page">
-      {cartSize === 0 ? (
+      {cart.length === 0 ? (
         <h1>Empty Cart</h1>
       ) : (
         <>
@@ -25,9 +25,13 @@ export default function Checkout() {
               </tr>
             </thead>
             <tbody>
-              {products.map(product => ( //TODO: Change products to cart
-                <CheckoutRow key={product.id} product={product} quantity={7} /> 
-              ))}
+              {
+                cart.map(item => {
+                  const product = products.find(product => item.id === product.id);
+                  console.log(product, item.quantity);
+                  return <CheckoutRow key={item.id} product={product} quantity={item.quantity} /> 
+                })
+              }
             </tbody>
           </table>
         </>

@@ -1,8 +1,10 @@
-import { useState } from 'react';
+import { useState, useContext } from "react";
+import { GlobalStateContext } from "../GlobalStateContext";
 
 export default function ProductCard({ product }) {
   const [value, setValue] = useState(1);
   const {id, title, price, description, category, image, rating} = product;
+  const { cart, setCart } = useContext(GlobalStateContext);
 
   const handleChange = e => {
     let input = parseInt(e.target.value);
@@ -34,6 +36,17 @@ export default function ProductCard({ product }) {
     });
   };
 
+  const handleAddToCart = (e) => {
+    let updatedCart = [...cart];
+    let index = updatedCart.findIndex(product => product.id === id);
+    if (index === -1) {
+      setCart([...updatedCart, {id: id, quantity: value}]);
+    } else {
+      updatedCart[index].quantity = value;
+      setCart(updatedCart);
+    }
+  }
+
   return (
     <div className="product-card">
       <img src={image} alt="product image" />
@@ -52,7 +65,7 @@ export default function ProductCard({ product }) {
           />
           <button onClick={addValue}>+</button>
         </div>
-        <button className="product-add-btn">Add To Cart</button>
+        <button className="product-add-btn" onClick={handleAddToCart}>Add To Cart</button>
       </div>
     </div>
   );
