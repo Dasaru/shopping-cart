@@ -1,8 +1,8 @@
-import { createContext, useState, useEffect } from "react";
+import { createContext, useState, useEffect, useRef } from "react";
 
 
 //example cards from: https://fakestoreapi.com/products/
-const apiResult = [
+const backupData = [
   {
     "id": 1,
     "title": "Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops",
@@ -48,9 +48,29 @@ export function GlobalStateProvider({ children }) {
   const [products, setProducts] = useState([]);
   const [cart, setCart] = useState([]);
 
+  const init = useRef(false);
+
   useEffect(() => {
-    //TODO: Fetch call, setGlobalState
-    setProducts(apiResult);
+    if (init.current) return;
+    fetch("https://fakestoreapi.com/products/")
+      .then((response) => {
+        if (response.ok) {
+          return response.json();
+        } else {
+          return response.json().then(response => {
+            throw new Error(response.error);
+          });
+        }
+      })
+      .then((data) => {
+        setProducts(data);
+      })
+      .catch(() => {
+        console.error("Fetching Error: Loading backup data.");
+        setProducts(backupData);
+      });
+
+    init.current = true;
   }, []);
 
   return (
