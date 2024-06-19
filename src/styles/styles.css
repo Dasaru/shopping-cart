@@ -238,6 +238,26 @@ body {
   gap: 20px;
 }
 
+.checkout-quantity {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.checkout-quantity button {
+  border: 1px solid black;
+  width: 25px;
+  height: 25px;
+  background-color: white;
+  font-size: 1.1rem;
+}
+
+.checkout-quantity button:hover {
+  cursor: pointer;
+  background-color: black;
+  color: white;
+}
+
 .checkout-delete-btn {
   border-radius: 50%;
   height: 30px;

@@ -28,7 +28,6 @@ export default function Checkout() {
               {
                 cart.map(item => {
                   const product = products.find(product => item.id === product.id);
-                  console.log(product, item.quantity);
                   return <CheckoutRow key={item.id} product={product} quantity={item.quantity} /> 
                 })
               }

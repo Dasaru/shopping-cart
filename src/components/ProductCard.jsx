@@ -55,15 +55,16 @@ export default function ProductCard({ product }) {
       <div className="product-area">
         <span className="product-price">${price.toFixed(2)}</span>
         <div className="product-quantity">
-          <button onClick={subValue}>&minus;</button>
+          <button onClick={subValue} aria-label="Subtract">&minus;</button>
           <input
             type="text"
             onChange={handleChange}
             onFocus={handleFocus}
             onBlur={handleBlur}
             value={value > 0 ? value : ""}
+            aria-label="Quantity"
           />
-          <button onClick={addValue}>+</button>
+          <button onClick={addValue} aria-label="Add">+</button>
         </div>
         <button className="product-add-btn" onClick={handleAddToCart}>Add To Cart</button>
       </div>
