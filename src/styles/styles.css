@@ -1,5 +1,5 @@
 :root {
-  --page-size: 1200px;
+  --page-size: 1300px;
   --page-padding: 3rem;
 }
 
@@ -241,8 +241,9 @@ body {
 
 .checkout-quantity {
   display: flex;
-  gap: 20px;
+  gap: 10px;
   align-items: center;
+  justify-content: space-between;
 }
 
 .checkout-quantity button {
