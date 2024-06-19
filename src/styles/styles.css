@@ -272,3 +272,30 @@ body {
   color: white;
   cursor: pointer;
 }
+
+.checkout-totals {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  gap: 5px;
+  margin-left: auto;
+  margin-top: 1rem;
+  margin-bottom: 40px;
+}
+
+.checkout-totals hr {
+  width: 100%;
+}
+
+.checkout-totals div {
+  display: flex;
+  justify-content: space-between;
+}
+
+.checkout-totals span:first-child {
+  font-weight: bold;
+}
+
+.checkout-grandtotal {
+  font-size: 1.4rem;
+}

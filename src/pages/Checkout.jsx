@@ -7,6 +7,14 @@ export default function Checkout() {
 
   const cartSize = cart.reduce((totalQty, product) => totalQty + product.quantity, 0);
 
+  const cartSubtotal = cart.reduce((sum, cartItem) => {
+    const productInfo = products.find(product => product.id === cartItem.id);
+    return sum + (productInfo.price * cartItem.quantity);
+  }, 0);
+
+  const TAX_RATE = 0.07;
+  const salesTax = cartSubtotal * TAX_RATE;
+
   return (
     <div className="page-container checkout-page">
       {cart.length === 0 ? (
@@ -33,6 +41,22 @@ export default function Checkout() {
               }
             </tbody>
           </table>
+          <div className="checkout-totals">
+              <div>
+                <span>Subtotal:</span>
+                <span>${cartSubtotal.toFixed(2)}</span>
+              </div>
+              <hr />
+              <div>
+                <span>Sales Tax (7%):</span>
+                <span>${salesTax.toFixed(2)}</span>
+              </div>
+              <hr />
+              <div>
+                <span>Grand Total:</span>
+                <span className="checkout-grandtotal">${(cartSubtotal + salesTax).toFixed(2)}</span>
+              </div>
+          </div>
         </>
       )}
     </div>
