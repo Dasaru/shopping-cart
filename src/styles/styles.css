@@ -120,7 +120,8 @@ body {
 }
 
 .product-card img {
-  height: 200px;
+  max-height: 200px;
+  max-width: 100%;
 }
 
 .product-card h2 {
