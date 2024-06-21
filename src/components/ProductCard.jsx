@@ -42,7 +42,7 @@ export default function ProductCard({ product }) {
     if (index === -1) {
       setCart([...updatedCart, {id: id, quantity: value}]);
     } else {
-      updatedCart[index].quantity = value;
+      updatedCart[index].quantity = updatedCart[index].quantity + value;
       setCart(updatedCart);
     }
   }
