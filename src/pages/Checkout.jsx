@@ -1,4 +1,5 @@
 import { useContext } from "react";
+import { Link } from "react-router-dom";
 import { GlobalStateContext } from "../GlobalStateContext";
 import CheckoutRow from "../components/CheckoutRow";
 
@@ -18,7 +19,10 @@ export default function Checkout() {
   return (
     <div className="page-container checkout-page">
       {cart.length === 0 ? (
-        <h1>Empty Cart</h1>
+        <>
+          <h1>Empty Cart</h1>
+          <span><Link to="/">Go back to add more items!</Link></span>
+        </>
       ) : (
         <>
           <h1>Your Cart ({cartSize} items)</h1>
