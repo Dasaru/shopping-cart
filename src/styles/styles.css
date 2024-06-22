@@ -226,6 +226,7 @@ body {
 }
 
 .checkout-page td {
+  height: 100px;
   vertical-align: middle;
 }
 
