@@ -12,6 +12,8 @@ body {
   display: flex;
   align-items: center;
   padding: 0 var(--page-padding);
+  position: sticky;
+  top: 0;
 }
 
 .nav ul {
