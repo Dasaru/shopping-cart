@@ -1,5 +1,3 @@
-
-
 export default function AboutCard({ children, title, previewUrl, iconSrc, iconAlt }) {
   return (
     <div className="about-card">
