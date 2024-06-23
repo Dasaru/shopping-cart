@@ -14,6 +14,7 @@ body {
   padding: 0 var(--page-padding);
   position: sticky;
   top: 0;
+  z-index: 1;
 }
 
 .nav ul {
@@ -306,4 +307,65 @@ body {
 
 .checkout-grandtotal {
   font-size: 1.4rem;
+}
+
+.about-page {
+  flex-wrap: wrap;
+  padding: var(--page-padding);
+  gap: 20px;
+}
+
+.about-card {
+  position: relative;
+  display: flex;
+  border: 1px solid black;
+  width: 300px;
+  min-width: 45%;
+  padding: 1rem;
+  padding-top: 330px;
+  border-radius: 15px;
+  box-sizing: border-box;
+}
+
+.about-card h2 {
+  font-size: 1.4rem;
+  font-weight: bold;
+}
+
+.about-card-title {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+  gap: 10px;
+}
+
+.about-card-preview {
+  width: 100%;
+  height: 300px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 15px 15px 0 0;
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-bottom: 1px solid black;
+}
+
+.about-card-icon {
+  height: 50px;
+}
+
+.about-card li {
+  margin-bottom: 5px;
+  font-size: 1.2rem;
+}
+
+.about-card li::before {
+  content: "";
+  background-image: url("/bullet.svg");
+  background-size: contain;
+  display: inline-block;
+  width: 1.2rem;
+  height: 1.2rem;
+  margin-right: 5px;
 }
