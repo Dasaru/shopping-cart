@@ -16,9 +16,8 @@ export default function About() {
         iconAlt="html icon"
       >
         <ul>
-          <li>Point one</li>
-          <li>Point two</li>
-          <li>Point three</li>
+          <li>Semantic HTML</li>
+          <li>Accessibility friendly</li>
         </ul>
       </AboutCard>
       <AboutCard
@@ -28,9 +27,8 @@ export default function About() {
         iconAlt="css icon"
       >
         <ul>
-          <li>Point one</li>
-          <li>Point two</li>
-          <li>Point three</li>
+          <li>Flexbox layout</li>
+          <li>Responsive design</li>
         </ul>
       </AboutCard>
       <AboutCard
@@ -40,9 +38,9 @@ export default function About() {
         iconAlt="javascript icon"
       >
         <ul>
-          <li>Point one</li>
-          <li>Point two</li>
-          <li>Point three</li>
+          <li>Fetch API for asynchronous requests</li>
+          <li>Event Listeners: onClick, onChange, onFocus, and onBlur</li>
+          <li>ES6+ syntax</li>
         </ul>
       </AboutCard>
       <AboutCard
@@ -52,9 +50,9 @@ export default function About() {
         iconAlt="react icon"
       >
         <ul>
-          <li>Point one</li>
-          <li>Point two</li>
-          <li>Point three</li>
+          <li>React Hooks: useState, useEffect, useRef, and useContext</li>
+          <li>State management with useContext and a state provider</li>
+          <li>Single page routing using react-router-dom and BrowserRouter</li>
         </ul>
       </AboutCard>
       <AboutCard
@@ -64,9 +62,9 @@ export default function About() {
         iconAlt="react testing library icon"
       >
         <ul>
-          <li>Point one</li>
-          <li>Point two</li>
-          <li>Point three</li>
+          <li>Component unit testing</li>
+          <li>Mocking user interaction and click events</li>
+          <li>Version control using Git</li>
         </ul>
       </AboutCard>
       <AboutCard
@@ -76,9 +74,8 @@ export default function About() {
         iconAlt="figma icon"
       >
         <ul>
-          <li>Point one</li>
-          <li>Point two</li>
-          <li>Point three</li>
+          <li>Page layout design</li>
+          <li>Feature planning and mockups</li>
         </ul>
       </AboutCard>
     </div>
