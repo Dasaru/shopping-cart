@@ -8,7 +8,7 @@ import figmaPreview from "../assets/figma-preview.png";
 
 export default function About() {
   return (
-    <div className="page-container about-page">
+    <div className="page-container about-page" data-testid="about-page">
       <AboutCard
         title="HTML"
         previewUrl={htmlPreview}

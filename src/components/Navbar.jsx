@@ -8,7 +8,7 @@ export default function Navbar() {
   const cartSize = cart.reduce((totalQty, product) => totalQty + product.quantity, 0);
 
   return (
-    <nav className="nav">
+    <nav className="nav" data-testid="navbar">
       <ul>
         <li>
           <Link to="/">Products</Link>

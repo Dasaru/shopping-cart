@@ -17,7 +17,7 @@ export default function Checkout() {
   const salesTax = cartSubtotal * TAX_RATE;
 
   return (
-    <div className="page-container checkout-page">
+    <div className="page-container checkout-page" data-testid="checkout-page">
       {cart.length === 0 ? (
         <>
           <h1>Empty Cart</h1>
