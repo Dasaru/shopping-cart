@@ -315,6 +315,23 @@ body {
   gap: 20px;
 }
 
+.about-header {
+  width: 70%;
+}
+
+.about-header h1 {
+  font-weight: bold;
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.about-header > div {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
 .about-card {
   position: relative;
   display: flex;

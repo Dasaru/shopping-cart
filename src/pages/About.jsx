@@ -9,6 +9,10 @@ import figmaPreview from "../assets/figma-preview.png";
 export default function About() {
   return (
     <div className="page-container about-page" data-testid="about-page">
+      <div className="about-header">
+        <h1>Shopping Cart App</h1>
+        <div>Created by Dallas Berry</div>
+      </div>
       <AboutCard
         title="HTML"
         previewUrl={htmlPreview}
