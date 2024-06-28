@@ -1,6 +1,5 @@
 import { createContext, useState, useEffect, useRef } from "react";
 
-
 //example cards from: https://fakestoreapi.com/products/
 const backupData = [
   {
@@ -40,7 +39,6 @@ const backupData = [
     }
   }
 ];
-
 
 export const GlobalStateContext = createContext();
 
@@ -89,7 +87,6 @@ export function GlobalStateProvider({ children }) {
       .catch(() => {
         console.error("Categories Fetching Error: Loading backup data.");
       });
-    //setCategories(["electronics", "men's wear", "women's wear", "jewelry", "car parts", "televisions", "bath tubs", "refigerators", "windows", "side panels", "roofing", "mechanics", "plumbing", "kitchenware", "toys and games"]);
 
     init.current = true;
   }, []);

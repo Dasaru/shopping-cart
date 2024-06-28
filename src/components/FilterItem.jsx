@@ -1,4 +1,4 @@
-import { useState, useEffect, useContext } from "react";
+import { useContext } from "react";
 import { GlobalStateContext } from "../GlobalStateContext";
 
 export default function FilterItem({ category, id }) {
@@ -7,13 +7,9 @@ export default function FilterItem({ category, id }) {
   const handleChange = () => {
     if (activeCategories.some(item => item === category)) {
       // Remove category
-      // console.log("Removing category... " + category);
-      // console.log("Prev Categories: " + activeCategories);
       setActiveCategories(activeCategories.filter(item => item !== category));
     } else {
       // Add category
-      // console.log("Adding category... " + category);
-      // console.log("Prev Categories: " + activeCategories);
       setActiveCategories(prevCat => [...prevCat, category]);
     }
   };
