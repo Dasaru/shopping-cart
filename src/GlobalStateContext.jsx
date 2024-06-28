@@ -46,12 +46,15 @@ export const GlobalStateContext = createContext();
 
 export function GlobalStateProvider({ children }) {
   const [products, setProducts] = useState([]);
+  const [categories, setCategories] = useState([]);
+  const [activeCategories, setActiveCategories] = useState([]);
   const [cart, setCart] = useState([]);
 
   const init = useRef(false);
 
   useEffect(() => {
     if (init.current) return;
+    // Fetch products
     fetch("https://fakestoreapi.com/products/")
       .then((response) => {
         if (response.ok) {
@@ -66,15 +69,33 @@ export function GlobalStateProvider({ children }) {
         setProducts(data);
       })
       .catch(() => {
-        console.error("Fetching Error: Loading backup data.");
+        console.error("Products Fetching Error: Loading backup data.");
         setProducts(backupData);
       });
+    // Fetch categories
+    fetch("https://fakestoreapi.com/products/categories")
+      .then(response => {
+        if (response.ok) {
+          return response.json();
+        } else {
+          return response.json().then(response => {
+            throw new Error(response.error);
+          });
+        }
+      })
+      .then((data) => {
+        setCategories(data);
+      })
+      .catch(() => {
+        console.error("Categories Fetching Error: Loading backup data.");
+      });
+    //setCategories(["electronics", "men's wear", "women's wear", "jewelry", "car parts", "televisions", "bath tubs", "refigerators", "windows", "side panels", "roofing", "mechanics", "plumbing", "kitchenware", "toys and games"]);
 
     init.current = true;
   }, []);
 
   return (
-    <GlobalStateContext.Provider value={{ products, cart, setCart }}>
+    <GlobalStateContext.Provider value={{ products, categories, activeCategories, setActiveCategories, cart, setCart }}>
       {children}
     </GlobalStateContext.Provider>
   );

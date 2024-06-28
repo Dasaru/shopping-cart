@@ -201,6 +201,42 @@ body {
   color: white;
 }
 
+.filter-container {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  width: 100%;
+  padding: 1rem var(--page-padding);
+  background-color: rgb(195, 214, 255);
+  border-radius: 20px;
+}
+
+.filter-container button {
+  border: 1px solid black;
+  background-color: white;
+  width: 4rem;
+  height: 1.5rem;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.filter-container button:hover {
+  background-color: black;
+  color: white;
+}
+
+.filter-categories {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.filter-item *:hover,
+.filter-item:hover {
+  cursor: pointer;
+}
+
 .checkout-page {
   flex-direction: column;
   align-items: center;

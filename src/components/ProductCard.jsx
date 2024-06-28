@@ -1,7 +1,7 @@
 import { useState, useContext } from "react";
 import { GlobalStateContext } from "../GlobalStateContext";
 
-export default function ProductCard({ product }) {
+export default function ProductCard({ product, visible }) {
   const [value, setValue] = useState(1);
   const {id, title, price, description, category, image, rating} = product;
   const { cart, setCart } = useContext(GlobalStateContext);
@@ -48,26 +48,33 @@ export default function ProductCard({ product }) {
   }
 
   return (
-    <div className="product-card">
-      <img src={image} alt="product image" />
-      <h2>{title}</h2>
-      <textarea value={description} disabled />
-      <div className="product-area">
-        <span className="product-price">${price.toFixed(2)}</span>
-        <div className="product-quantity">
-          <button onClick={subValue} aria-label="Subtract">&minus;</button>
-          <input
-            type="text"
-            onChange={handleChange}
-            onFocus={handleFocus}
-            onBlur={handleBlur}
-            value={value > 0 ? value : ""}
-            aria-label="Quantity"
-          />
-          <button onClick={addValue} aria-label="Add">+</button>
+    <>
+      {visible ? (
+        <div className="product-card">
+          <img src={image} alt="product image" />
+          <h2>{title}</h2>
+          <textarea value={description} disabled />
+          <div className="product-area">
+            <span className="product-price">${price.toFixed(2)}</span>
+            <div className="product-quantity">
+              <button onClick={subValue} aria-label="Subtract">&minus;</button>
+              <input
+                type="text"
+                onChange={handleChange}
+                onFocus={handleFocus}
+                onBlur={handleBlur}
+                value={value > 0 ? value : ""}
+                aria-label="Quantity"
+              />
+              <button onClick={addValue} aria-label="Add">+</button>
+            </div>
+            <button className="product-add-btn" onClick={handleAddToCart}>Add To Cart</button>
+          </div>
         </div>
-        <button className="product-add-btn" onClick={handleAddToCart}>Add To Cart</button>
-      </div>
-    </div>
+      ) : (
+        <></>
+      )}
+    </>
+    
   );
 }
