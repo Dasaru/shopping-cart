@@ -3,7 +3,7 @@ import htmlPreview from "../assets/html-preview.png";
 import cssPreview from "../assets/css-preview.png";
 import javascriptPreview from "../assets/javascript-preview.png";
 import reactPreview from "../assets/react-preview.png";
-// import reactTestingLibraryPreview from "../assets/react-testing-library-preview.png";
+import reactTestingLibraryPreview from "../assets/react-testing-library-preview.png";
 import figmaPreview from "../assets/figma-preview.png";
 
 export default function About() {
@@ -61,7 +61,7 @@ export default function About() {
       </AboutCard>
       <AboutCard
         title="React Testing Library"
-        previewUrl={""}
+        previewUrl={reactTestingLibraryPreview}
         iconSrc="react-testing-library-logo.png"
         iconAlt="react testing library icon"
       >
